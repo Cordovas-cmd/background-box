@@ -5,6 +5,27 @@ const rightBtn = document.getElementById('right')
 
 let activeSlide = 0;
 
+
+rightBtn.addEventListener('click', () => {
+    activeSlide++
+    // if we run out of slides start over
+    if(activeSlide > slides.length -1) {
+        activeSlide = 0
+    }
+    setBgImage()
+    setActiveSlide()
+})
+
+
+leftBtn.addEventListener('click', () => {
+    activeSlide--
+    // if we run out of slides start over
+    if(activeSlide < 0) {
+        activeSlide = slides.length -1
+    }
+    setBgImage()
+    setActiveSlide()
+})
 setBgImage()
 
 function setBgImage() {
